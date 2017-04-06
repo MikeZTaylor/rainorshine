@@ -1,0 +1,818 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6488452F1E969880009BB729 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6488452E1E969880009BB729 /* AppDelegate.swift */; };
+		648845311E969880009BB729 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 648845301E969880009BB729 /* ViewController.swift */; };
+		648845341E969880009BB729 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 648845321E969880009BB729 /* Main.storyboard */; };
+		648845361E969880009BB729 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 648845351E969880009BB729 /* Assets.xcassets */; };
+		648845391E969880009BB729 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 648845371E969880009BB729 /* LaunchScreen.storyboard */; };
+		648845441E969880009BB729 /* rainorshineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 648845431E969880009BB729 /* rainorshineTests.swift */; };
+		6488454F1E969880009BB729 /* rainorshineUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6488454E1E969880009BB729 /* rainorshineUITests.swift */; };
+		648845541E969880009BB729 /* rainorshine WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 648845531E969880009BB729 /* rainorshine WatchKit App.app */; };
+		6488455A1E969880009BB729 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 648845581E969880009BB729 /* Interface.storyboard */; };
+		6488455C1E969880009BB729 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6488455B1E969880009BB729 /* Assets.xcassets */; };
+		648845631E969881009BB729 /* rainorshine WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 648845621E969881009BB729 /* rainorshine WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		6488456A1E969881009BB729 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 648845691E969881009BB729 /* InterfaceController.swift */; };
+		6488456C1E969881009BB729 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6488456B1E969881009BB729 /* ExtensionDelegate.swift */; };
+		6488456E1E969881009BB729 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6488456D1E969881009BB729 /* NotificationController.swift */; };
+		648845701E969881009BB729 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6488456F1E969881009BB729 /* Assets.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		648845401E969880009BB729 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 648845231E969880009BB729 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6488452A1E969880009BB729;
+			remoteInfo = rainorshine;
+		};
+		6488454B1E969880009BB729 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 648845231E969880009BB729 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6488452A1E969880009BB729;
+			remoteInfo = rainorshine;
+		};
+		648845551E969880009BB729 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 648845231E969880009BB729 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 648845521E969880009BB729;
+			remoteInfo = "rainorshine WatchKit App";
+		};
+		648845641E969881009BB729 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 648845231E969880009BB729 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 648845611E969881009BB729;
+			remoteInfo = "rainorshine WatchKit Extension";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		648845771E969881009BB729 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				648845631E969881009BB729 /* rainorshine WatchKit Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6488457B1E969881009BB729 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				648845541E969880009BB729 /* rainorshine WatchKit App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		6488452B1E969880009BB729 /* rainorshine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = rainorshine.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6488452E1E969880009BB729 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		648845301E969880009BB729 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		648845331E969880009BB729 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		648845351E969880009BB729 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		648845381E969880009BB729 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		6488453A1E969880009BB729 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6488453F1E969880009BB729 /* rainorshineTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = rainorshineTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		648845431E969880009BB729 /* rainorshineTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rainorshineTests.swift; sourceTree = "<group>"; };
+		648845451E969880009BB729 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6488454A1E969880009BB729 /* rainorshineUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = rainorshineUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6488454E1E969880009BB729 /* rainorshineUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rainorshineUITests.swift; sourceTree = "<group>"; };
+		648845501E969880009BB729 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		648845531E969880009BB729 /* rainorshine WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "rainorshine WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		648845591E969880009BB729 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		6488455B1E969880009BB729 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		6488455D1E969880009BB729 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		648845621E969881009BB729 /* rainorshine WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "rainorshine WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		648845681E969881009BB729 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		648845691E969881009BB729 /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		6488456B1E969881009BB729 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		6488456D1E969881009BB729 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		6488456F1E969881009BB729 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		648845711E969881009BB729 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		648845281E969880009BB729 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6488453C1E969880009BB729 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		648845471E969880009BB729 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6488455F1E969881009BB729 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		648845221E969880009BB729 = {
+			isa = PBXGroup;
+			children = (
+				6488452D1E969880009BB729 /* rainorshine */,
+				648845421E969880009BB729 /* rainorshineTests */,
+				6488454D1E969880009BB729 /* rainorshineUITests */,
+				648845571E969880009BB729 /* rainorshine WatchKit App */,
+				648845661E969881009BB729 /* rainorshine WatchKit Extension */,
+				6488452C1E969880009BB729 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		6488452C1E969880009BB729 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6488452B1E969880009BB729 /* rainorshine.app */,
+				6488453F1E969880009BB729 /* rainorshineTests.xctest */,
+				6488454A1E969880009BB729 /* rainorshineUITests.xctest */,
+				648845531E969880009BB729 /* rainorshine WatchKit App.app */,
+				648845621E969881009BB729 /* rainorshine WatchKit Extension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6488452D1E969880009BB729 /* rainorshine */ = {
+			isa = PBXGroup;
+			children = (
+				6488452E1E969880009BB729 /* AppDelegate.swift */,
+				648845301E969880009BB729 /* ViewController.swift */,
+				648845321E969880009BB729 /* Main.storyboard */,
+				648845351E969880009BB729 /* Assets.xcassets */,
+				648845371E969880009BB729 /* LaunchScreen.storyboard */,
+				6488453A1E969880009BB729 /* Info.plist */,
+			);
+			path = rainorshine;
+			sourceTree = "<group>";
+		};
+		648845421E969880009BB729 /* rainorshineTests */ = {
+			isa = PBXGroup;
+			children = (
+				648845431E969880009BB729 /* rainorshineTests.swift */,
+				648845451E969880009BB729 /* Info.plist */,
+			);
+			path = rainorshineTests;
+			sourceTree = "<group>";
+		};
+		6488454D1E969880009BB729 /* rainorshineUITests */ = {
+			isa = PBXGroup;
+			children = (
+				6488454E1E969880009BB729 /* rainorshineUITests.swift */,
+				648845501E969880009BB729 /* Info.plist */,
+			);
+			path = rainorshineUITests;
+			sourceTree = "<group>";
+		};
+		648845571E969880009BB729 /* rainorshine WatchKit App */ = {
+			isa = PBXGroup;
+			children = (
+				648845581E969880009BB729 /* Interface.storyboard */,
+				6488455B1E969880009BB729 /* Assets.xcassets */,
+				6488455D1E969880009BB729 /* Info.plist */,
+			);
+			path = "rainorshine WatchKit App";
+			sourceTree = "<group>";
+		};
+		648845661E969881009BB729 /* rainorshine WatchKit Extension */ = {
+			isa = PBXGroup;
+			children = (
+				648845691E969881009BB729 /* InterfaceController.swift */,
+				6488456B1E969881009BB729 /* ExtensionDelegate.swift */,
+				6488456D1E969881009BB729 /* NotificationController.swift */,
+				6488456F1E969881009BB729 /* Assets.xcassets */,
+				648845711E969881009BB729 /* Info.plist */,
+				648845671E969881009BB729 /* Supporting Files */,
+			);
+			path = "rainorshine WatchKit Extension";
+			sourceTree = "<group>";
+		};
+		648845671E969881009BB729 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				648845681E969881009BB729 /* PushNotificationPayload.apns */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		6488452A1E969880009BB729 /* rainorshine */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6488457C1E969881009BB729 /* Build configuration list for PBXNativeTarget "rainorshine" */;
+			buildPhases = (
+				648845271E969880009BB729 /* Sources */,
+				648845281E969880009BB729 /* Frameworks */,
+				648845291E969880009BB729 /* Resources */,
+				6488457B1E969881009BB729 /* Embed Watch Content */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				648845561E969880009BB729 /* PBXTargetDependency */,
+			);
+			name = rainorshine;
+			productName = rainorshine;
+			productReference = 6488452B1E969880009BB729 /* rainorshine.app */;
+			productType = "com.apple.product-type.application";
+		};
+		6488453E1E969880009BB729 /* rainorshineTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6488457F1E969881009BB729 /* Build configuration list for PBXNativeTarget "rainorshineTests" */;
+			buildPhases = (
+				6488453B1E969880009BB729 /* Sources */,
+				6488453C1E969880009BB729 /* Frameworks */,
+				6488453D1E969880009BB729 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				648845411E969880009BB729 /* PBXTargetDependency */,
+			);
+			name = rainorshineTests;
+			productName = rainorshineTests;
+			productReference = 6488453F1E969880009BB729 /* rainorshineTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		648845491E969880009BB729 /* rainorshineUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 648845821E969881009BB729 /* Build configuration list for PBXNativeTarget "rainorshineUITests" */;
+			buildPhases = (
+				648845461E969880009BB729 /* Sources */,
+				648845471E969880009BB729 /* Frameworks */,
+				648845481E969880009BB729 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6488454C1E969880009BB729 /* PBXTargetDependency */,
+			);
+			name = rainorshineUITests;
+			productName = rainorshineUITests;
+			productReference = 6488454A1E969880009BB729 /* rainorshineUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		648845521E969880009BB729 /* rainorshine WatchKit App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 648845781E969881009BB729 /* Build configuration list for PBXNativeTarget "rainorshine WatchKit App" */;
+			buildPhases = (
+				648845511E969880009BB729 /* Resources */,
+				648845771E969881009BB729 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				648845651E969881009BB729 /* PBXTargetDependency */,
+			);
+			name = "rainorshine WatchKit App";
+			productName = "rainorshine WatchKit App";
+			productReference = 648845531E969880009BB729 /* rainorshine WatchKit App.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		648845611E969881009BB729 /* rainorshine WatchKit Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 648845741E969881009BB729 /* Build configuration list for PBXNativeTarget "rainorshine WatchKit Extension" */;
+			buildPhases = (
+				6488455E1E969881009BB729 /* Sources */,
+				6488455F1E969881009BB729 /* Frameworks */,
+				648845601E969881009BB729 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "rainorshine WatchKit Extension";
+			productName = "rainorshine WatchKit Extension";
+			productReference = 648845621E969881009BB729 /* rainorshine WatchKit Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		648845231E969880009BB729 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = "Mike Taylor";
+				TargetAttributes = {
+					6488452A1E969880009BB729 = {
+						CreatedOnToolsVersion = 8.3;
+						DevelopmentTeam = 3H68RG2SRC;
+						ProvisioningStyle = Automatic;
+					};
+					6488453E1E969880009BB729 = {
+						CreatedOnToolsVersion = 8.3;
+						DevelopmentTeam = 3H68RG2SRC;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 6488452A1E969880009BB729;
+					};
+					648845491E969880009BB729 = {
+						CreatedOnToolsVersion = 8.3;
+						DevelopmentTeam = 3H68RG2SRC;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 6488452A1E969880009BB729;
+					};
+					648845521E969880009BB729 = {
+						CreatedOnToolsVersion = 8.3;
+						DevelopmentTeam = 3H68RG2SRC;
+						ProvisioningStyle = Automatic;
+					};
+					648845611E969881009BB729 = {
+						CreatedOnToolsVersion = 8.3;
+						DevelopmentTeam = 3H68RG2SRC;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 648845261E969880009BB729 /* Build configuration list for PBXProject "rainorshine" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 648845221E969880009BB729;
+			productRefGroup = 6488452C1E969880009BB729 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6488452A1E969880009BB729 /* rainorshine */,
+				6488453E1E969880009BB729 /* rainorshineTests */,
+				648845491E969880009BB729 /* rainorshineUITests */,
+				648845521E969880009BB729 /* rainorshine WatchKit App */,
+				648845611E969881009BB729 /* rainorshine WatchKit Extension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		648845291E969880009BB729 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				648845391E969880009BB729 /* LaunchScreen.storyboard in Resources */,
+				648845361E969880009BB729 /* Assets.xcassets in Resources */,
+				648845341E969880009BB729 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6488453D1E969880009BB729 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		648845481E969880009BB729 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		648845511E969880009BB729 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6488455C1E969880009BB729 /* Assets.xcassets in Resources */,
+				6488455A1E969880009BB729 /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		648845601E969881009BB729 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				648845701E969881009BB729 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		648845271E969880009BB729 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				648845311E969880009BB729 /* ViewController.swift in Sources */,
+				6488452F1E969880009BB729 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6488453B1E969880009BB729 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				648845441E969880009BB729 /* rainorshineTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		648845461E969880009BB729 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6488454F1E969880009BB729 /* rainorshineUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6488455E1E969881009BB729 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6488456E1E969881009BB729 /* NotificationController.swift in Sources */,
+				6488456C1E969881009BB729 /* ExtensionDelegate.swift in Sources */,
+				6488456A1E969881009BB729 /* InterfaceController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		648845411E969880009BB729 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6488452A1E969880009BB729 /* rainorshine */;
+			targetProxy = 648845401E969880009BB729 /* PBXContainerItemProxy */;
+		};
+		6488454C1E969880009BB729 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6488452A1E969880009BB729 /* rainorshine */;
+			targetProxy = 6488454B1E969880009BB729 /* PBXContainerItemProxy */;
+		};
+		648845561E969880009BB729 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 648845521E969880009BB729 /* rainorshine WatchKit App */;
+			targetProxy = 648845551E969880009BB729 /* PBXContainerItemProxy */;
+		};
+		648845651E969881009BB729 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 648845611E969881009BB729 /* rainorshine WatchKit Extension */;
+			targetProxy = 648845641E969881009BB729 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		648845321E969880009BB729 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				648845331E969880009BB729 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		648845371E969880009BB729 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				648845381E969880009BB729 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		648845581E969880009BB729 /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				648845591E969880009BB729 /* Base */,
+			);
+			name = Interface.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		648845721E969881009BB729 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		648845731E969881009BB729 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		648845751E969881009BB729 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				DEVELOPMENT_TEAM = 3H68RG2SRC;
+				INFOPLIST_FILE = "rainorshine WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ie.wit.rainorshine.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 3.2;
+			};
+			name = Debug;
+		};
+		648845761E969881009BB729 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				DEVELOPMENT_TEAM = 3H68RG2SRC;
+				INFOPLIST_FILE = "rainorshine WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ie.wit.rainorshine.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 3.2;
+			};
+			name = Release;
+		};
+		648845791E969881009BB729 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 3H68RG2SRC;
+				IBSC_MODULE = rainorshine_WatchKit_Extension;
+				INFOPLIST_FILE = "rainorshine WatchKit App/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = ie.wit.rainorshine.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 3.2;
+			};
+			name = Debug;
+		};
+		6488457A1E969881009BB729 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 3H68RG2SRC;
+				IBSC_MODULE = rainorshine_WatchKit_Extension;
+				INFOPLIST_FILE = "rainorshine WatchKit App/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = ie.wit.rainorshine.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 3.2;
+			};
+			name = Release;
+		};
+		6488457D1E969881009BB729 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 3H68RG2SRC;
+				INFOPLIST_FILE = rainorshine/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ie.wit.rainorshine;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		6488457E1E969881009BB729 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 3H68RG2SRC;
+				INFOPLIST_FILE = rainorshine/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ie.wit.rainorshine;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		648845801E969881009BB729 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 3H68RG2SRC;
+				INFOPLIST_FILE = rainorshineTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ie.wit.rainorshineTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/rainorshine.app/rainorshine";
+			};
+			name = Debug;
+		};
+		648845811E969881009BB729 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 3H68RG2SRC;
+				INFOPLIST_FILE = rainorshineTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ie.wit.rainorshineTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/rainorshine.app/rainorshine";
+			};
+			name = Release;
+		};
+		648845831E969881009BB729 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = 3H68RG2SRC;
+				INFOPLIST_FILE = rainorshineUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ie.wit.rainorshineUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = rainorshine;
+			};
+			name = Debug;
+		};
+		648845841E969881009BB729 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = 3H68RG2SRC;
+				INFOPLIST_FILE = rainorshineUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ie.wit.rainorshineUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = rainorshine;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		648845261E969880009BB729 /* Build configuration list for PBXProject "rainorshine" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				648845721E969881009BB729 /* Debug */,
+				648845731E969881009BB729 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		648845741E969881009BB729 /* Build configuration list for PBXNativeTarget "rainorshine WatchKit Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				648845751E969881009BB729 /* Debug */,
+				648845761E969881009BB729 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		648845781E969881009BB729 /* Build configuration list for PBXNativeTarget "rainorshine WatchKit App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				648845791E969881009BB729 /* Debug */,
+				6488457A1E969881009BB729 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		6488457C1E969881009BB729 /* Build configuration list for PBXNativeTarget "rainorshine" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6488457D1E969881009BB729 /* Debug */,
+				6488457E1E969881009BB729 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		6488457F1E969881009BB729 /* Build configuration list for PBXNativeTarget "rainorshineTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				648845801E969881009BB729 /* Debug */,
+				648845811E969881009BB729 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		648845821E969881009BB729 /* Build configuration list for PBXNativeTarget "rainorshineUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				648845831E969881009BB729 /* Debug */,
+				648845841E969881009BB729 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 648845231E969880009BB729 /* Project object */;
+}
