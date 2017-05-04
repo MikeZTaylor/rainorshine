@@ -7,6 +7,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -50,39 +51,47 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="J46-zV-RVm"/>
                                 </connections>
                             </searchBar>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h6Z-NY-zf6">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="30" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h6Z-NY-zf6">
                                 <rect key="frame" x="16" y="229" width="177" height="189"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="71"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="189" id="0Ei-rt-1bK"/>
+                                    <constraint firstAttribute="width" constant="177" id="V7R-VC-3Wx"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="142"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <pageControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="tK4-2X-7FV">
-                                <rect key="frame" x="168" y="520" width="39" height="37"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="pageIndicatorTintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                <color key="currentPageIndicatorTintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                            </pageControl>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yEq-Ka-dzn">
-                                <rect key="frame" x="201" y="229" width="158" height="89"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c2y-af-JVl">
-                                <rect key="frame" x="201" y="326" width="158" height="89"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c2y-af-JVl">
+                                <rect key="frame" x="201" y="354" width="193" height="61"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="celcius" translatesAutoresizingMaskIntoConstraints="NO" id="cer-i5-Gz5">
-                                <rect key="frame" x="150" y="229" width="49" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heavystroms" translatesAutoresizingMaskIntoConstraints="NO" id="yEq-Ka-dzn">
+                                <rect key="frame" x="229" y="229" width="165" height="117"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="165" id="Fd2-80-8AQ"/>
+                                    <constraint firstAttribute="height" constant="117" id="vgQ-T7-XyZ"/>
+                                </constraints>
                             </imageView>
+                            <pageControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="tK4-2X-7FV">
+                                <rect key="frame" x="188" y="593" width="39" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="pageIndicatorTintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="currentPageIndicatorTintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </pageControl>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="c2y-af-JVl" firstAttribute="top" secondItem="yEq-Ka-dzn" secondAttribute="bottom" constant="8" symbolic="YES" id="5Tl-ug-ao0"/>
                             <constraint firstItem="zs4-3E-WRm" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="8sZ-2T-qKF"/>
+                            <constraint firstItem="yEq-Ka-dzn" firstAttribute="top" secondItem="h6Z-NY-zf6" secondAttribute="top" id="MB0-yX-c3J"/>
+                            <constraint firstItem="h6Z-NY-zf6" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-4" id="Mwm-B8-TEY"/>
+                            <constraint firstItem="yEq-Ka-dzn" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="Obh-aB-F1q"/>
+                            <constraint firstItem="c2y-af-JVl" firstAttribute="leading" secondItem="h6Z-NY-zf6" secondAttribute="trailing" constant="8" symbolic="YES" id="Qnl-t4-VtP"/>
+                            <constraint firstItem="yEq-Ka-dzn" firstAttribute="trailing" secondItem="c2y-af-JVl" secondAttribute="trailing" id="eNV-7x-bQ7"/>
                             <constraint firstItem="zs4-3E-WRm" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="o7q-sH-fOB"/>
+                            <constraint firstItem="h6Z-NY-zf6" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="229" id="qWs-gu-jCg"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Rain Or Shine" id="fEK-pt-IQY"/>
@@ -105,6 +114,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="celcius" width="256" height="256"/>
+        <image name="heavystroms" width="177" height="140"/>
     </resources>
 </document>
