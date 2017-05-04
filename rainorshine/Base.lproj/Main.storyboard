@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_7" orientation="portrait">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Y2b-VG-CGQ">
+    <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -10,7 +10,23 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Navigation Controller-->
+        <scene sceneID="p7A-Lj-H8r">
+            <objects>
+                <navigationController id="Y2b-VG-CGQ" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="nJa-gr-8es">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="b5t-za-Dl7"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gn1-X1-PhG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-825" y="136"/>
+        </scene>
+        <!--Rain Or Shine-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="rainorshine" customModuleProvider="target" sceneMemberID="viewController">
@@ -19,14 +35,14 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Search Locations" translatesAutoresizingMaskIntoConstraints="NO" id="zs4-3E-WRm">
-                                <rect key="frame" x="0.0" y="35" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="64" width="414" height="44"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="375" id="AQF-kM-JuH"/>
-                                    <constraint firstAttribute="width" secondItem="zs4-3E-WRm" secondAttribute="height" multiplier="375:44" id="QrJ-jx-pE4"/>
+                                    <constraint firstAttribute="width" constant="414" id="AQF-kM-JuH"/>
+                                    <constraint firstAttribute="width" secondItem="zs4-3E-WRm" secondAttribute="height" multiplier="375:44" constant="39" id="QrJ-jx-pE4"/>
                                     <constraint firstAttribute="height" constant="44" id="l06-Lt-7Z6"/>
                                 </constraints>
                                 <textInputTraits key="textInputTraits"/>
@@ -35,7 +51,7 @@
                                 </connections>
                             </searchBar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h6Z-NY-zf6">
-                                <rect key="frame" x="16" y="229" width="177" height="208"/>
+                                <rect key="frame" x="16" y="229" width="177" height="189"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="71"/>
                                 <nil key="textColor"/>
@@ -47,13 +63,29 @@
                                 <color key="pageIndicatorTintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="currentPageIndicatorTintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </pageControl>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yEq-Ka-dzn">
+                                <rect key="frame" x="201" y="229" width="158" height="89"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c2y-af-JVl">
+                                <rect key="frame" x="201" y="326" width="158" height="89"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="celcius" translatesAutoresizingMaskIntoConstraints="NO" id="cer-i5-Gz5">
+                                <rect key="frame" x="150" y="229" width="49" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="zs4-3E-WRm" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="15" id="8sZ-2T-qKF"/>
+                            <constraint firstItem="zs4-3E-WRm" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="8sZ-2T-qKF"/>
                             <constraint firstItem="zs4-3E-WRm" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="o7q-sH-fOB"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Rain Or Shine" id="fEK-pt-IQY"/>
                     <connections>
                         <outlet property="searchDisplayController" destination="Vdm-kM-geb" id="Za1-WY-xer"/>
                     </connections>
@@ -69,7 +101,10 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="77.599999999999994" y="137.18140929535232"/>
+            <point key="canvasLocation" x="75.362318840579718" y="136.14130434782609"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="celcius" width="256" height="256"/>
+    </resources>
 </document>
