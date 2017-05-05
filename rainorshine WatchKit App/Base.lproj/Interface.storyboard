@@ -14,9 +14,9 @@
             <objects>
                 <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="rainorshine_WatchKit_App" customModuleProvider="target">
                     <items>
-                        <imageView width="110" height="82" alignment="left" image="cloudynight" id="eIK-Pa-fbb"/>
-                        <label width="99" height="28" alignment="left" text="Label" id="blG-oc-d7d"/>
-                        <label width="99" height="28" alignment="left" text="Label" id="rFV-ga-4k5"/>
+                        <imageView width="133" height="92" alignment="left" image="cloudynight" id="eIK-Pa-fbb"/>
+                        <label width="99" height="20" alignment="left" text="Label" id="blG-oc-d7d"/>
+                        <label width="99" height="21" alignment="left" text="Label" id="rFV-ga-4k5"/>
                     </items>
                 </controller>
             </objects>

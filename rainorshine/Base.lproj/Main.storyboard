@@ -77,10 +77,16 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="tK4-2X-7FV">
-                                <rect key="frame" x="188" y="691" width="39" height="37"/>
-                                <color key="pageIndicatorTintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                <color key="currentPageIndicatorTintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="riY-pO-ttJ">
+                                <rect key="frame" x="0.0" y="524" width="414" height="212"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </scrollView>
+                            <pageControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="LUJ-hb-5ft">
+                                <rect key="frame" x="160" y="499" width="94" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="pageIndicatorTintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="currentPageIndicatorTintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </pageControl>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -92,15 +98,15 @@
                             <constraint firstItem="h6Z-NY-zf6" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="229" id="PJY-TO-04Z"/>
                             <constraint firstItem="c2y-af-JVl" firstAttribute="leading" secondItem="h6Z-NY-zf6" secondAttribute="trailing" constant="8" symbolic="YES" id="RpZ-u1-JCW"/>
                             <constraint firstItem="h6Z-NY-zf6" firstAttribute="top" secondItem="yEq-Ka-dzn" secondAttribute="top" id="UmQ-C1-4Cb"/>
-                            <constraint firstItem="h6Z-NY-zf6" firstAttribute="trailing" secondItem="tK4-2X-7FV" secondAttribute="trailing" id="Wle-lM-3ny"/>
                             <constraint firstItem="c2y-af-JVl" firstAttribute="trailing" secondItem="yEq-Ka-dzn" secondAttribute="trailing" constant="-20" id="YK7-Kf-IwE"/>
                             <constraint firstItem="zs4-3E-WRm" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="o7q-sH-fOB"/>
                             <constraint firstItem="h6Z-NY-zf6" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-4" id="pyY-Q2-agk"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="tK4-2X-7FV" secondAttribute="bottom" constant="8" id="zk6-U4-3iK"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Rain Or Shine" id="fEK-pt-IQY"/>
                     <connections>
+                        <outlet property="pageControl" destination="LUJ-hb-5ft" id="Mtq-VC-xHa"/>
+                        <outlet property="scrollView" destination="riY-pO-ttJ" id="itv-Tg-cnZ"/>
                         <outlet property="searchDisplayController" destination="Vdm-kM-geb" id="Za1-WY-xer"/>
                     </connections>
                 </viewController>
