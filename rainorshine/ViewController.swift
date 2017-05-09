@@ -10,8 +10,6 @@ import UIKit
 
 class ViewController: UIViewController, UIScrollViewDelegate {
     
-    
-    
     @IBOutlet weak var scrollView: UIScrollView!
     
     @IBOutlet weak var pageControl: UIPageControl!
@@ -25,6 +23,8 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     
     var frame = CGRect(x: 0, y: 0, width: 0, height: 0)
     
+    
+    private let dataManager = DataManager(baseURL: API.AuthenticatedBaseURL)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,6 +52,11 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         //
         
         view.bringSubview(toFront: pageControl)
+        
+        // Fetch Weather Data
+        dataManager.weatherDataForLocation(latitude: Defaults.Latitude, longitude: Defaults.Longitude) { (response, error) in
+            print(response)
+        }
         
         
     }
