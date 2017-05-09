@@ -13,10 +13,16 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     
     
     @IBOutlet weak var scrollView: UIScrollView!
-
+    
     @IBOutlet weak var pageControl: UIPageControl!
     
-    var colors :[UIColor] = [UIColor.red,UIColor.blue,UIColor.green,UIColor.brown]
+    @IBOutlet weak var weatherLabel: UILabel!
+    
+    var colors :[UIColor] = [UIColor.white,UIColor.green,UIColor.white,UIColor.white]
+    
+    var weatherLabelValues: [String] = ["Regular", "Soy", "Almond", "Milk"]
+    
+    
     var frame = CGRect(x: 0, y: 0, width: 0, height: 0)
     
     
@@ -27,6 +33,7 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
         
         pageControl.numberOfPages = colors.count
+        
         for index in 0..<colors.count
         {
             frame.origin.x = scrollView.frame.size.width * CGFloat(index)
@@ -34,9 +41,10 @@ class ViewController: UIViewController, UIScrollViewDelegate {
             
             let view = UIView(frame: frame)
             view.backgroundColor = colors[index]
+            self.weatherLabel.text = weatherLabelValues[index]
             self.scrollView.addSubview(view)
-            
         }
+    
         
         scrollView.contentSize = CGSize(width: (scrollView.frame.size.width * CGFloat(colors.count)), height: scrollView.frame.size.height)
         
@@ -47,13 +55,13 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         
         
     }
-
+    
     
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         
         let pageNumber = scrollView.contentOffset.x / scrollView.frame.size.width
         pageControl.currentPage = Int(pageNumber)
-        pageControl.currentPageIndicatorTintColor = colors[pageControl.currentPage]
+        pageControl.currentPageIndicatorTintColor = UIColor.black
         
     }
     override func didReceiveMemoryWarning()
@@ -66,7 +74,7 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         
         let x = CGFloat(sender.currentPage) * scrollView.frame.size.width
         scrollView.contentOffset = CGPoint(x: x, y: 0)
-        pageControl.currentPageIndicatorTintColor = colors[sender.currentPage]
+        pageControl.currentPageIndicatorTintColor = UIColor.black
     }
     
 }

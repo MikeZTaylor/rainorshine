@@ -68,37 +68,39 @@
                                     <constraint firstAttribute="height" constant="117" id="vgQ-T7-XyZ"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c2y-af-JVl">
-                                <rect key="frame" x="235" y="354" width="159" height="61"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="riY-pO-ttJ">
+                                <rect key="frame" x="0.0" y="488" width="414" height="212"/>
+                            </scrollView>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="LUJ-hb-5ft">
+                                <rect key="frame" x="160" y="700" width="94" height="37"/>
+                                <color key="tintColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="61" id="Md3-IB-ad5"/>
+                                    <constraint firstAttribute="width" constant="94" id="MjO-3u-3hd"/>
                                 </constraints>
+                                <color key="pageIndicatorTintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="currentPageIndicatorTintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </pageControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Crk-7t-EhE">
+                                <rect key="frame" x="186" y="524" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="riY-pO-ttJ">
-                                <rect key="frame" x="0.0" y="524" width="414" height="212"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </scrollView>
-                            <pageControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="LUJ-hb-5ft">
-                                <rect key="frame" x="160" y="499" width="94" height="37"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                <color key="tintColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="pageIndicatorTintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                <color key="currentPageIndicatorTintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </pageControl>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="zs4-3E-WRm" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="8sZ-2T-qKF"/>
-                            <constraint firstItem="c2y-af-JVl" firstAttribute="top" secondItem="yEq-Ka-dzn" secondAttribute="bottom" constant="8" symbolic="YES" id="FUv-Hw-QJr"/>
                             <constraint firstItem="yEq-Ka-dzn" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="229" id="Fs2-Kc-akN"/>
+                            <constraint firstItem="riY-pO-ttJ" firstAttribute="trailing" secondItem="yEq-Ka-dzn" secondAttribute="trailing" id="Iy8-H9-QXk"/>
+                            <constraint firstItem="riY-pO-ttJ" firstAttribute="leading" secondItem="zs4-3E-WRm" secondAttribute="leading" id="K5W-oe-mjX"/>
                             <constraint firstItem="yEq-Ka-dzn" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" constant="20" id="Obh-aB-F1q"/>
                             <constraint firstItem="h6Z-NY-zf6" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="229" id="PJY-TO-04Z"/>
-                            <constraint firstItem="c2y-af-JVl" firstAttribute="leading" secondItem="h6Z-NY-zf6" secondAttribute="trailing" constant="8" symbolic="YES" id="RpZ-u1-JCW"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="LUJ-hb-5ft" secondAttribute="bottom" constant="-1" id="Qwn-jm-hgH"/>
                             <constraint firstItem="h6Z-NY-zf6" firstAttribute="top" secondItem="yEq-Ka-dzn" secondAttribute="top" id="UmQ-C1-4Cb"/>
-                            <constraint firstItem="c2y-af-JVl" firstAttribute="trailing" secondItem="yEq-Ka-dzn" secondAttribute="trailing" constant="-20" id="YK7-Kf-IwE"/>
+                            <constraint firstItem="riY-pO-ttJ" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="488" id="eI2-l3-P1q"/>
+                            <constraint firstItem="LUJ-hb-5ft" firstAttribute="top" secondItem="riY-pO-ttJ" secondAttribute="bottom" id="nJO-Bx-RJo"/>
+                            <constraint firstItem="riY-pO-ttJ" firstAttribute="centerX" secondItem="LUJ-hb-5ft" secondAttribute="centerX" id="nQk-1b-UPW"/>
                             <constraint firstItem="zs4-3E-WRm" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="o7q-sH-fOB"/>
                             <constraint firstItem="h6Z-NY-zf6" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-4" id="pyY-Q2-agk"/>
                         </constraints>
@@ -108,6 +110,7 @@
                         <outlet property="pageControl" destination="LUJ-hb-5ft" id="Mtq-VC-xHa"/>
                         <outlet property="scrollView" destination="riY-pO-ttJ" id="itv-Tg-cnZ"/>
                         <outlet property="searchDisplayController" destination="Vdm-kM-geb" id="Za1-WY-xer"/>
+                        <outlet property="weatherLabel" destination="Crk-7t-EhE" id="anO-en-xUN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
