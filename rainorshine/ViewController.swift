@@ -8,15 +8,10 @@
 
 import UIKit
 
-class ViewController: UIViewController, UIScrollViewDelegate {
+class ViewController: UIViewController {
     
-    @IBOutlet weak var scrollView: UIScrollView!
-    
-    @IBOutlet weak var pageControl: UIPageControl!
     
     @IBOutlet weak var weatherLabel: UILabel!
-    
-    var colors :[UIColor] = [UIColor.white,UIColor.green,UIColor.white,UIColor.white]
     
     var weatherLabelValues: [String] = ["Regular", "Soy", "Almond", "Milk"]
     
@@ -26,60 +21,68 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     
     private let dataManager = DataManager(baseURL: API.AuthenticatedBaseURL)
     
+    
+    public struct WeatherData {
+        
+        public let lat: Double
+        public let long: Double
+        
+        public let hourData: [WeatherHourData]
+        
+        public init(lat: Double, long: Double, hourData: [WeatherHourData]) {
+            self.lat = lat
+            self.long = long
+            self.hourData = hourData
+        }
+    }
+    
+    public struct WeatherHourData {
+        
+        public let time: Date
+        public let windSpeed: Int
+        public let temperature: Double
+        public let precipitation: Double
+        
+        public init(time: Date, windSpeed: Int, temperature: Double, precipitation: Double) {
+            self.time = time
+            self.windSpeed = windSpeed
+            self.temperature = temperature
+            self.precipitation = precipitation
+        }
+        
+    }
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         navigationController?.navigationBar.barTintColor = UIColor(red:0.18, green:0.69, blue:0.82, alpha:1.0)
         navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
         
-        pageControl.numberOfPages = colors.count
-        
-        for index in 0..<colors.count
-        {
-            frame.origin.x = scrollView.frame.size.width * CGFloat(index)
-            frame.size = scrollView.frame.size
-            
-            let view = UIView(frame: frame)
-            view.backgroundColor = colors[index]
-            self.weatherLabel.text = weatherLabelValues[index]
-            self.scrollView.addSubview(view)
-        }
-    
-        
-        scrollView.contentSize = CGSize(width: (scrollView.frame.size.width * CGFloat(colors.count)), height: scrollView.frame.size.height)
-        
-        scrollView.delegate = self
-        //
-        
-        view.bringSubview(toFront: pageControl)
-        
         // Fetch Weather Data
         dataManager.weatherDataForLocation(latitude: Defaults.Latitude, longitude: Defaults.Longitude) { (response, error) in
-            print(response)
+            print(response!)
         }
         
         
-    }
-    
-    
-    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        //DispatchQueue.main.async(execute: {
+            
+         //   self.weatherLabel.text = self.weatherLabelValues[index]
+         //   self.view.setNeedsDisplay()
+        //    self.weatherLabel.setNeedsDisplay()
+            
+       // })
         
-        let pageNumber = scrollView.contentOffset.x / scrollView.frame.size.width
-        pageControl.currentPage = Int(pageNumber)
-        pageControl.currentPageIndicatorTintColor = UIColor.black
+            //let MainWeatherController = storyboard?.instantiateViewController(withIdentifier: "MainWeatherController") as! MainWeatherController
+           // MainWeatherController.selectedViewController = MainWeatherController.viewControllers?[0]
+           // present(MainWeatherController, animated: true, completion: nil)
         
     }
+
     override func didReceiveMemoryWarning()
     {
         super.didReceiveMemoryWarning()
         
     }
-    
-    @IBAction func pageChange(_ sender: UIPageControl) {
-        
-        let x = CGFloat(sender.currentPage) * scrollView.frame.size.width
-        scrollView.contentOffset = CGPoint(x: x, y: 0)
-        pageControl.currentPageIndicatorTintColor = UIColor.black
-    }
-    
+
 }

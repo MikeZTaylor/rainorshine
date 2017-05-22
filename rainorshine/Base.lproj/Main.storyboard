@@ -11,21 +11,22 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Navigation Controller-->
+        <!--Today's Weather-->
         <scene sceneID="p7A-Lj-H8r">
             <objects>
                 <navigationController id="Y2b-VG-CGQ" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Today's Weather" id="7bl-Ze-I1u"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="nJa-gr-8es">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="b5t-za-Dl7"/>
+                        <segue destination="xBL-be-l24" kind="relationship" relationship="rootViewController" id="b7w-Ed-uJV"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gn1-X1-PhG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-825" y="136"/>
+            <point key="canvasLocation" x="-1235" y="443"/>
         </scene>
         <!--Rain Or Shine-->
         <scene sceneID="tne-QT-ifu">
@@ -42,9 +43,7 @@
                             <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Search Locations" translatesAutoresizingMaskIntoConstraints="NO" id="zs4-3E-WRm">
                                 <rect key="frame" x="0.0" y="64" width="414" height="44"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="414" id="AQF-kM-JuH"/>
-                                    <constraint firstAttribute="width" secondItem="zs4-3E-WRm" secondAttribute="height" multiplier="375:44" constant="39" id="QrJ-jx-pE4"/>
-                                    <constraint firstAttribute="height" constant="44" id="l06-Lt-7Z6"/>
+                                    <constraint firstAttribute="width" constant="414" id="Bjw-ko-k9n"/>
                                 </constraints>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
@@ -52,37 +51,22 @@
                                 </connections>
                             </searchBar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="30" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h6Z-NY-zf6">
-                                <rect key="frame" x="16" y="229" width="211" height="189"/>
+                                <rect key="frame" x="48" y="450" width="211" height="189"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="189" id="21J-wr-Wlx"/>
-                                    <constraint firstAttribute="width" constant="211" id="osF-7b-ca0"/>
+                                    <constraint firstAttribute="width" constant="211" id="eHS-kF-a4t"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="142"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heavystroms" translatesAutoresizingMaskIntoConstraints="NO" id="yEq-Ka-dzn">
-                                <rect key="frame" x="249" y="229" width="165" height="117"/>
+                                <rect key="frame" x="48" y="216" width="319" height="226"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="165" id="Fd2-80-8AQ"/>
-                                    <constraint firstAttribute="height" constant="117" id="vgQ-T7-XyZ"/>
+                                    <constraint firstAttribute="width" secondItem="yEq-Ka-dzn" secondAttribute="height" multiplier="319:226" id="BUu-sQ-CRc"/>
                                 </constraints>
                             </imageView>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="riY-pO-ttJ">
-                                <rect key="frame" x="0.0" y="488" width="414" height="212"/>
-                            </scrollView>
-                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="LUJ-hb-5ft">
-                                <rect key="frame" x="160" y="700" width="94" height="37"/>
-                                <color key="tintColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="94" id="MjO-3u-3hd"/>
-                                </constraints>
-                                <color key="pageIndicatorTintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                <color key="currentPageIndicatorTintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </pageControl>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Crk-7t-EhE">
-                                <rect key="frame" x="186" y="524" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weather Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Crk-7t-EhE">
+                                <rect key="frame" x="267" y="534" width="132" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -90,25 +74,23 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="zs4-3E-WRm" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="8sZ-2T-qKF"/>
-                            <constraint firstItem="yEq-Ka-dzn" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="229" id="Fs2-Kc-akN"/>
-                            <constraint firstItem="riY-pO-ttJ" firstAttribute="trailing" secondItem="yEq-Ka-dzn" secondAttribute="trailing" id="Iy8-H9-QXk"/>
-                            <constraint firstItem="riY-pO-ttJ" firstAttribute="leading" secondItem="zs4-3E-WRm" secondAttribute="leading" id="K5W-oe-mjX"/>
-                            <constraint firstItem="yEq-Ka-dzn" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" constant="20" id="Obh-aB-F1q"/>
-                            <constraint firstItem="h6Z-NY-zf6" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="229" id="PJY-TO-04Z"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="LUJ-hb-5ft" secondAttribute="bottom" constant="-1" id="Qwn-jm-hgH"/>
-                            <constraint firstItem="h6Z-NY-zf6" firstAttribute="top" secondItem="yEq-Ka-dzn" secondAttribute="top" id="UmQ-C1-4Cb"/>
-                            <constraint firstItem="riY-pO-ttJ" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="488" id="eI2-l3-P1q"/>
-                            <constraint firstItem="LUJ-hb-5ft" firstAttribute="top" secondItem="riY-pO-ttJ" secondAttribute="bottom" id="nJO-Bx-RJo"/>
-                            <constraint firstItem="riY-pO-ttJ" firstAttribute="centerX" secondItem="LUJ-hb-5ft" secondAttribute="centerX" id="nQk-1b-UPW"/>
-                            <constraint firstItem="zs4-3E-WRm" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="o7q-sH-fOB"/>
-                            <constraint firstItem="h6Z-NY-zf6" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-4" id="pyY-Q2-agk"/>
+                            <constraint firstItem="h6Z-NY-zf6" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="28" id="5IZ-bN-YEZ"/>
+                            <constraint firstItem="zs4-3E-WRm" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="8fb-Fc-1bC"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="yEq-Ka-dzn" secondAttribute="trailing" constant="27" id="Fjz-E7-uTJ"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="h6Z-NY-zf6" secondAttribute="bottom" constant="48" id="KKv-JC-dWA"/>
+                            <constraint firstItem="yEq-Ka-dzn" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="28" id="OlR-ow-RSB"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Crk-7t-EhE" secondAttribute="bottom" constant="132" id="PxN-FI-bSk"/>
+                            <constraint firstItem="h6Z-NY-zf6" firstAttribute="top" secondItem="yEq-Ka-dzn" secondAttribute="bottom" constant="8" symbolic="YES" id="YRh-ct-bP3"/>
+                            <constraint firstItem="zs4-3E-WRm" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="Ymy-jW-CgV"/>
+                            <constraint firstItem="Crk-7t-EhE" firstAttribute="leading" secondItem="h6Z-NY-zf6" secondAttribute="trailing" constant="8" id="aPa-zA-gsh"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="zs4-3E-WRm" secondAttribute="trailing" constant="-20" id="aoT-kZ-qo9"/>
+                            <constraint firstItem="h6Z-NY-zf6" firstAttribute="centerY" secondItem="Crk-7t-EhE" secondAttribute="centerY" id="hP9-Rn-qZ1"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Crk-7t-EhE" secondAttribute="trailing" constant="-5" id="w1w-dl-lRY"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Todays View" id="d72-r6-QI0"/>
                     <navigationItem key="navigationItem" title="Rain Or Shine" id="fEK-pt-IQY"/>
                     <connections>
-                        <outlet property="pageControl" destination="LUJ-hb-5ft" id="Mtq-VC-xHa"/>
-                        <outlet property="scrollView" destination="riY-pO-ttJ" id="itv-Tg-cnZ"/>
                         <outlet property="searchDisplayController" destination="Vdm-kM-geb" id="Za1-WY-xer"/>
                         <outlet property="weatherLabel" destination="Crk-7t-EhE" id="anO-en-xUN"/>
                     </connections>
@@ -124,7 +106,60 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="75.362318840579718" y="136.14130434782609"/>
+            <point key="canvasLocation" x="982.60869565217399" y="136.14130434782609"/>
+        </scene>
+        <!--Rain Or Shine-->
+        <scene sceneID="RfO-uI-Wi0">
+            <objects>
+                <viewController id="SeK-8L-XyE" customClass="DetailedWeatherView" customModule="rainorshine" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jfF-SU-bbU"/>
+                        <viewControllerLayoutGuide type="bottom" id="22d-8Z-K28"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="rai-HR-OXd">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heavystroms" translatesAutoresizingMaskIntoConstraints="NO" id="JZn-5i-Bbt">
+                                <rect key="frame" x="90" y="136" width="257" height="182"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="JZn-5i-Bbt" secondAttribute="height" multiplier="319:226" id="OC0-He-o9x"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="JZn-5i-Bbt" firstAttribute="top" secondItem="jfF-SU-bbU" secondAttribute="bottom" constant="72" id="GSF-kM-wbB"/>
+                            <constraint firstItem="22d-8Z-K28" firstAttribute="top" secondItem="JZn-5i-Bbt" secondAttribute="bottom" constant="369" id="Qar-dN-UZj"/>
+                            <constraint firstItem="JZn-5i-Bbt" firstAttribute="leading" secondItem="rai-HR-OXd" secondAttribute="leadingMargin" constant="70" id="hHH-dr-745"/>
+                            <constraint firstItem="JZn-5i-Bbt" firstAttribute="width" secondItem="JZn-5i-Bbt" secondAttribute="height" multiplier="319:226" id="z1i-Dg-t9F"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Detailed View" id="gaC-Su-RD2"/>
+                    <navigationItem key="navigationItem" title="Rain Or Shine" id="aKs-dd-719"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eKq-4e-77A" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="983" y="887"/>
+        </scene>
+        <!--Rain Or Shine-->
+        <scene sceneID="EzH-4s-j0r">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6Cd-1T-Lgm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tabBarController storyboardIdentifier="MainWeatherController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="xBL-be-l24" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" title="Rain Or Shine" id="8cU-Wq-QVn"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="57e-mf-BA0">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="eJg-1J-Dz0"/>
+                        <segue destination="SeK-8L-XyE" kind="relationship" relationship="viewControllers" id="p1M-H7-J9a"/>
+                    </connections>
+                </tabBarController>
+            </objects>
+            <point key="canvasLocation" x="-307" y="443"/>
         </scene>
     </scenes>
     <resources>
