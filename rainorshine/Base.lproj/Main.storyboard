@@ -21,7 +21,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="xBL-be-l24" kind="relationship" relationship="rootViewController" id="b7w-Ed-uJV"/>
+                        <segue destination="xBL-be-l24" kind="relationship" relationship="rootViewController" id="vF9-rL-e3E"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gn1-X1-PhG" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -88,7 +88,7 @@
                             <constraint firstAttribute="trailingMargin" secondItem="Crk-7t-EhE" secondAttribute="trailing" constant="-5" id="w1w-dl-lRY"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Todays View" id="d72-r6-QI0"/>
+                    <tabBarItem key="tabBarItem" title="Todays View" image="today" selectedImage="today" id="d72-r6-QI0"/>
                     <navigationItem key="navigationItem" title="Rain Or Shine" id="fEK-pt-IQY"/>
                     <connections>
                         <outlet property="searchDisplayController" destination="Vdm-kM-geb" id="Za1-WY-xer"/>
@@ -111,7 +111,7 @@
         <!--Rain Or Shine-->
         <scene sceneID="RfO-uI-Wi0">
             <objects>
-                <viewController id="SeK-8L-XyE" customClass="DetailedWeatherView" customModule="rainorshine" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="SeK-8L-XyE" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jfF-SU-bbU"/>
                         <viewControllerLayoutGuide type="bottom" id="22d-8Z-K28"/>
@@ -135,7 +135,7 @@
                             <constraint firstItem="JZn-5i-Bbt" firstAttribute="width" secondItem="JZn-5i-Bbt" secondAttribute="height" multiplier="319:226" id="z1i-Dg-t9F"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Detailed View" id="gaC-Su-RD2"/>
+                    <tabBarItem key="tabBarItem" title="Detailed View" image="detailed" selectedImage="detailed" id="gaC-Su-RD2"/>
                     <navigationItem key="navigationItem" title="Rain Or Shine" id="aKs-dd-719"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eKq-4e-77A" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -154,8 +154,8 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="eJg-1J-Dz0"/>
                         <segue destination="SeK-8L-XyE" kind="relationship" relationship="viewControllers" id="p1M-H7-J9a"/>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="eJg-1J-Dz0"/>
                     </connections>
                 </tabBarController>
             </objects>
@@ -163,6 +163,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="detailed" width="30" height="30"/>
         <image name="heavystroms" width="177" height="140"/>
+        <image name="today" width="30" height="30"/>
     </resources>
 </document>
