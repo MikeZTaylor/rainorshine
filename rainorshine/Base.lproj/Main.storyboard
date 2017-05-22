@@ -42,9 +42,6 @@
                         <subviews>
                             <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Search Locations" translatesAutoresizingMaskIntoConstraints="NO" id="zs4-3E-WRm">
                                 <rect key="frame" x="0.0" y="64" width="414" height="44"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="414" id="Bjw-ko-k9n"/>
-                                </constraints>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="J46-zV-RVm"/>
@@ -75,16 +72,16 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="h6Z-NY-zf6" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="28" id="5IZ-bN-YEZ"/>
-                            <constraint firstItem="zs4-3E-WRm" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="8fb-Fc-1bC"/>
                             <constraint firstAttribute="trailingMargin" secondItem="yEq-Ka-dzn" secondAttribute="trailing" constant="27" id="Fjz-E7-uTJ"/>
+                            <constraint firstItem="zs4-3E-WRm" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="J5i-ys-1UP"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="h6Z-NY-zf6" secondAttribute="bottom" constant="48" id="KKv-JC-dWA"/>
                             <constraint firstItem="yEq-Ka-dzn" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="28" id="OlR-ow-RSB"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Crk-7t-EhE" secondAttribute="bottom" constant="132" id="PxN-FI-bSk"/>
+                            <constraint firstItem="zs4-3E-WRm" firstAttribute="centerX" secondItem="yEq-Ka-dzn" secondAttribute="centerX" id="UWq-Ig-iWv"/>
                             <constraint firstItem="h6Z-NY-zf6" firstAttribute="top" secondItem="yEq-Ka-dzn" secondAttribute="bottom" constant="8" symbolic="YES" id="YRh-ct-bP3"/>
-                            <constraint firstItem="zs4-3E-WRm" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="Ymy-jW-CgV"/>
                             <constraint firstItem="Crk-7t-EhE" firstAttribute="leading" secondItem="h6Z-NY-zf6" secondAttribute="trailing" constant="8" id="aPa-zA-gsh"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="zs4-3E-WRm" secondAttribute="trailing" constant="-20" id="aoT-kZ-qo9"/>
                             <constraint firstItem="h6Z-NY-zf6" firstAttribute="centerY" secondItem="Crk-7t-EhE" secondAttribute="centerY" id="hP9-Rn-qZ1"/>
+                            <constraint firstItem="zs4-3E-WRm" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="jpf-Qp-UEw"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Crk-7t-EhE" secondAttribute="trailing" constant="-5" id="w1w-dl-lRY"/>
                         </constraints>
                     </view>

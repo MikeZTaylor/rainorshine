@@ -61,7 +61,11 @@ class ViewController: UIViewController {
         
         // Fetch Weather Data
         dataManager.weatherDataForLocation(latitude: Defaults.Latitude, longitude: Defaults.Longitude) { (response, error) in
-            print(response!)
+            
+            let test = response!["currently"] as? [String: Any]
+            print(test?["apparentTemperature"] as Any)
+            //print(response!["currently"])
+            
         }
         
         
