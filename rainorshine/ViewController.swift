@@ -10,48 +10,15 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    
     @IBOutlet weak var weatherLabel: UILabel!
+    @IBOutlet weak var temperature: UILabel!
+    @IBOutlet weak var temp: UILabel!
     
     var weatherLabelValues: [String] = ["Regular", "Soy", "Almond", "Milk"]
-    
-    
-    var frame = CGRect(x: 0, y: 0, width: 0, height: 0)
-    
+    var currentWeather = [String: Any]()
+        //var currentWeather: [String] = ["apparentTemperature", "cloudCover", "dewPoint", "humidity", "icon". "nearestStormBearing", "nearestStormDistance", "ozone", "precipIntensity", "precipProbability", "pressure", "summary", "temperature",]
     
     private let dataManager = DataManager(baseURL: API.AuthenticatedBaseURL)
-    
-    
-    public struct WeatherData {
-        
-        public let lat: Double
-        public let long: Double
-        
-        public let hourData: [WeatherHourData]
-        
-        public init(lat: Double, long: Double, hourData: [WeatherHourData]) {
-            self.lat = lat
-            self.long = long
-            self.hourData = hourData
-        }
-    }
-    
-    public struct WeatherHourData {
-        
-        public let time: Date
-        public let windSpeed: Int
-        public let temperature: Double
-        public let precipitation: Double
-        
-        public init(time: Date, windSpeed: Int, temperature: Double, precipitation: Double) {
-            self.time = time
-            self.windSpeed = windSpeed
-            self.temperature = temperature
-            self.precipitation = precipitation
-        }
-        
-    }
-
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,14 +27,22 @@ class ViewController: UIViewController {
         navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
         
         // Fetch Weather Data
-        dataManager.weatherDataForLocation(latitude: Defaults.Latitude, longitude: Defaults.Longitude) { (response, error) in
+        //dataManager.weatherDataForLocation(latitude: Defaults.Latitude, longitude: Defaults.Longitude) { (response, error) in
             
-            let test = response!["currently"] as? [String: Any]
-            print(test?["apparentTemperature"] as Any)
+           // self.currentWeather = (response!["currently"] as? [String: Any])!
+            //print(test?["apparentTemperature"] as Any)
             //print(response!["currently"])
             
-        }
+            //self.temperature.text = (self.currentWeather["summary"] as! String)
+            //self.temp.text = "\(self.currentWeather["summary"] ?? 0)"
+            //self.temp.text = "\(String(describing: self.currentWeather["apparentTemperature"]))"
+            //print("color: \(color ?? "")")
+            //var stringOfDBL = "\(myDouble)
+            
+        //}
         
+        let weather = WeatherGetter()
+        weather.getWeather(city: "Tampa")
         
         //DispatchQueue.main.async(execute: {
             

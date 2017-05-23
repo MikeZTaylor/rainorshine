@@ -16,7 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        
+        Thread.sleep(forTimeInterval: 5.0)
         UIApplication.shared.statusBarStyle = .lightContent
         UITabBar.appearance().isTranslucent = false
         UITabBar.appearance().barTintColor = UIColor(red:1.00, green:1.00, blue:1.00, alpha:1.0)
@@ -45,7 +45,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-
 
 }
 

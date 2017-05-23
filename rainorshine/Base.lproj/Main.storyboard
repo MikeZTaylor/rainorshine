@@ -21,7 +21,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="xBL-be-l24" kind="relationship" relationship="rootViewController" id="vF9-rL-e3E"/>
+                        <segue destination="xBL-be-l24" kind="relationship" relationship="rootViewController" id="Tgj-27-Btt"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gn1-X1-PhG" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -68,6 +68,20 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="loading" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mCE-Tg-E46">
+                                <rect key="frame" x="175" y="564" width="224" height="123"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="62"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9dm-kQ-4s1">
+                                <rect key="frame" x="20" y="131" width="323" height="68"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="34"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -89,6 +103,8 @@
                     <navigationItem key="navigationItem" title="Rain Or Shine" id="fEK-pt-IQY"/>
                     <connections>
                         <outlet property="searchDisplayController" destination="Vdm-kM-geb" id="Za1-WY-xer"/>
+                        <outlet property="temp" destination="9dm-kQ-4s1" id="auW-VK-XFh"/>
+                        <outlet property="temperature" destination="mCE-Tg-E46" id="aa8-rg-t2p"/>
                         <outlet property="weatherLabel" destination="Crk-7t-EhE" id="anO-en-xUN"/>
                     </connections>
                 </viewController>
@@ -142,7 +158,6 @@
         <!--Rain Or Shine-->
         <scene sceneID="EzH-4s-j0r">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="6Cd-1T-Lgm" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tabBarController storyboardIdentifier="MainWeatherController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="xBL-be-l24" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" title="Rain Or Shine" id="8cU-Wq-QVn"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="57e-mf-BA0">
@@ -151,10 +166,11 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="SeK-8L-XyE" kind="relationship" relationship="viewControllers" id="p1M-H7-J9a"/>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="eJg-1J-Dz0"/>
+                        <segue destination="SeK-8L-XyE" kind="relationship" relationship="viewControllers" id="p1M-H7-J9a"/>
                     </connections>
                 </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6Cd-1T-Lgm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-307" y="443"/>
         </scene>
