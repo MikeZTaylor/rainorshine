@@ -22,7 +22,7 @@ import Foundation
 // - The received weather data could not be converted from JSON into a dictionary.
 protocol WeatherGetterDelegate {
     func didGetWeather(_ weather: Weather)
-    func didNotGetWeather(_ error: NSError)
+    func didNotGetWeather(_ error: Error)
 }
 
 
@@ -60,9 +60,9 @@ class WeatherGetter {
         
         // The data task retrieves the data.
         let dataTask = session.dataTask(with: weatherRequestURL, completionHandler: {
-            (data: Data?, response: URLResponse?, error: NSError?) in
-            if let networkError = error {
-                // Case 1: Error
+            (data: Data?, response: URLResponse?, error: Error?) in
+            
+            if let networkError = error {              // Case 1: Error
                 // An error occurred while trying to get data from the server.
                 self.delegate.didNotGetWeather(networkError)
             }
@@ -89,7 +89,7 @@ class WeatherGetter {
                     self.delegate.didNotGetWeather(jsonError)
                 }
             }
-            } as! (Data?, URLResponse?, Error?) -> Void) 
+            }) //as! (Data?, URLResponse?, Error?) -> Void)
         
         // The data task is set up...launch it!
         dataTask.resume()

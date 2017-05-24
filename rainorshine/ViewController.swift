@@ -63,8 +63,8 @@ class ViewController: UIViewController,
         weatherLabel.text = "Currently Raining"
         temperatureLabel.text = "00"
         cloudCoverLabel.text = "partly"
-        //windLabel.text = "20"
-        //rainLabel.text = "0"
+        windLabel.text = "20"
+        rainLabel.text = "0"
         humidityLabel.text = "44"
         cityTextField.text = ""
         cityTextField.placeholder = "Search for City"
@@ -127,7 +127,7 @@ class ViewController: UIViewController,
         }
     }
     
-    func didNotGetWeather(_ error: NSError) {
+    func didNotGetWeather(_ error: Error) {
         // to showSimpleAlert(title:message:) in a dispatch_async() call.
         DispatchQueue.main.async {
             self.showSimpleAlert(title: "Can't get the weather",
@@ -272,7 +272,6 @@ class ViewController: UIViewController,
     }
     
 }
-
 
 extension String {
     

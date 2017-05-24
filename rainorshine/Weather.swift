@@ -25,7 +25,9 @@ struct Weather {
     // OpenWeatherMap reports temperature in Kelvin,
     // which is why we provide celsius and fahrenheit
     // computed properties.
+    
     fileprivate let temp: Double
+    
     var tempCelsius: Double {
         get {
             return temp - 273.15
@@ -44,6 +46,7 @@ struct Weather {
     // These properties are optionals because OpenWeatherMap doesn't provide:
     // - a value for wind direction when the wind speed is negligible
     // - rain info when there is no rainfall
+    
     let windDirection: Double?
     let rainfallInLast3Hours: Double?
     
