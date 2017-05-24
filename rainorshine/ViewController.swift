@@ -34,8 +34,8 @@ fileprivate func > <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
 
 class ViewController: UIViewController,
     WeatherGetterDelegate,
-    CLLocationManagerDelegate,
-    UITextFieldDelegate
+    CLLocationManagerDelegate, 
+    UITextFieldDelegate, UISearchBarDelegate
 {
     @IBOutlet weak var cityLabel: UILabel!
     @IBOutlet weak var weatherLabel: UILabel!
@@ -45,9 +45,10 @@ class ViewController: UIViewController,
     @IBOutlet weak var rainLabel: UILabel!
     @IBOutlet weak var humidityLabel: UILabel!
     @IBOutlet weak var getLocationWeatherButton: UIButton!
-    @IBOutlet weak var cityTextField: UITextField!
-    @IBOutlet weak var getCityWeatherButton: UIButton!
     
+    @IBOutlet weak var searchLocation: UISearchBar!
+    var searchActive : Bool = false
+    var checkWeather : Bool = false
     let locationManager = CLLocationManager()
     var weather: WeatherGetter!
     
@@ -57,6 +58,7 @@ class ViewController: UIViewController,
     override func viewDidLoad() {
         super.viewDidLoad()
         weather = WeatherGetter(delegate: self)
+        searchLocation.delegate = self
         
         // Initialize UI
         cityLabel.text = "Waterford Ireland"
@@ -66,13 +68,12 @@ class ViewController: UIViewController,
         windLabel.text = "20"
         rainLabel.text = "0"
         humidityLabel.text = "44"
-        cityTextField.text = ""
-        cityTextField.placeholder = "Search for City"
-        cityTextField.delegate = self
-        cityTextField.enablesReturnKeyAutomatically = true
-        getCityWeatherButton.isEnabled = false
+        searchLocation.text = ""
+        searchLocation.placeholder = "Search for City"
+        searchLocation.enablesReturnKeyAutomatically = true
         
         getLocation()
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -84,21 +85,37 @@ class ViewController: UIViewController,
     // --------------------------------
     
     @IBAction func getWeatherForLocationButtonTapped(_ sender: UIButton) {
-        setWeatherButtonStates(false)
+        //setWeatherButtonStates(false)
         getLocation()
-    }
-    
-    @IBAction func getWeatherForCityButtonTapped(_ sender: UIButton) {
-        guard let text = cityTextField.text, !text.trimmed.isEmpty else {
-            return
-        }
-        setWeatherButtonStates(false)
-        weather.getWeatherByCity(cityTextField.text!.urlEncoded)
     }
     
     func setWeatherButtonStates(_ state: Bool) {
         getLocationWeatherButton.isEnabled = state
-        getCityWeatherButton.isEnabled = state
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        guard let text = searchLocation.text, !text.trimmed.isEmpty else {
+            return
+        }
+        weather.getWeatherByCity(searchLocation.text!.urlEncoded)
+        searchActive = false;
+        self.searchLocation.endEditing(true)
+    }
+    
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        searchActive = true;
+    }
+    
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+        searchActive = false;
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchActive = false;
+    }
+    
+    func searchBarBookmarkButtonClicked(_ searchBar: UISearchBar) {
+        searchActive = false;
     }
     
     
@@ -123,7 +140,6 @@ class ViewController: UIViewController,
             
             self.humidityLabel.text = "\(weather.humidity)%"
             self.getLocationWeatherButton.isEnabled = true
-            self.getCityWeatherButton.isEnabled = self.cityTextField.text?.characters.count > 0
         }
     }
     
@@ -133,7 +149,7 @@ class ViewController: UIViewController,
             self.showSimpleAlert(title: "Can't get the weather",
                                  message: "The weather service isn't responding.")
             self.getLocationWeatherButton.isEnabled = true
-            self.getCityWeatherButton.isEnabled = self.cityTextField.text?.characters.count > 0
+
         }
         print("didNotGetWeather error: \(error)")
     }
@@ -207,41 +223,6 @@ class ViewController: UIViewController,
         print("locationManager didFailWithError: \(error)")
     }
     
-    
-    // MARK: - UITextFieldDelegate and related methods
-    
-    // Enable the "Get weather for the city above" button
-    // if the city text field contains any text,
-    // disable it otherwise.
-    func textField(_ textField: UITextField,
-                   shouldChangeCharactersIn range: NSRange,
-                   replacementString string: String) -> Bool {
-        let currentText = textField.text ?? ""
-        let prospectiveText = (currentText as NSString).replacingCharacters(
-            in: range,
-            with: string).trimmed
-        getCityWeatherButton.isEnabled = prospectiveText.characters.count > 0
-        return true
-    }
-    
-    // Pressing the clear button on the text field (the x-in-a-circle button
-    // on the right side of the field)
-    func textFieldShouldClear(_ textField: UITextField) -> Bool {
-        // Even though pressing the clear button clears the text field,
-        // this line is necessary. I'll explain in a later blog post.
-        textField.text = ""
-        
-        getCityWeatherButton.isEnabled = false
-        return true
-    }
-    
-    // Pressing the return button on the keyboard should be like
-    // pressing the "Get weather for the city above" button.
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        getWeatherForCityButtonTapped(getCityWeatherButton)
-        return true
-    }
     
     // Tapping on the view should dismiss the keyboard.
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
