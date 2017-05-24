@@ -225,6 +225,7 @@
                     <connections>
                         <outlet property="cityLabel" destination="8a3-hW-CH6" id="4ll-5r-jx5"/>
                         <outlet property="cloudCoverLabel" destination="lpU-Hk-gmA" id="7B0-gY-fNj"/>
+                        <outlet property="displayWeeatherImage" destination="yEq-Ka-dzn" id="rfa-Aj-oBQ"/>
                         <outlet property="getLocationWeatherButton" destination="coS-nw-hvi" id="gEU-hj-rye"/>
                         <outlet property="humidityLabel" destination="88g-og-fFt" id="iqK-Lz-ANH"/>
                         <outlet property="rainLabel" destination="rvN-EB-7dJ" id="Uwz-LN-Wmn"/>

@@ -46,11 +46,26 @@ class ViewController: UIViewController,
     @IBOutlet weak var humidityLabel: UILabel!
     @IBOutlet weak var getLocationWeatherButton: UIButton!
     
+    @IBOutlet weak var displayWeeatherImage: UIImageView!
     @IBOutlet weak var searchLocation: UISearchBar!
     var searchActive : Bool = false
     var checkWeather : Bool = false
     var locationManager = CLLocationManager()
     var weather: WeatherGetter!
+    
+    var weatherImage: [UIImage] = [
+        UIImage(named: "chanceofrain.png")!,
+        UIImage(named: "clearnight.png")!,
+        UIImage(named: "cloudy.png")!,
+        UIImage(named: "cloudynight.png")!,
+        UIImage(named: "foggy.png")!,
+        UIImage(named: "heavyrain.png")!,
+        UIImage(named: "heavystroms.png")!,
+        UIImage(named: "lightrain.png")!,
+        UIImage(named: "overcast.png")!,
+        UIImage(named: "sun.png")!,
+        UIImage(named: "windy.png")!
+    ]
     
     
     // MARK: -
@@ -76,6 +91,8 @@ class ViewController: UIViewController,
         searchLocation.text = ""
         searchLocation.placeholder = "Search for City"
         searchLocation.enablesReturnKeyAutomatically = true
+        
+         displayWeeatherImage.image = weatherImage[3]
         
         getLocation()
         
