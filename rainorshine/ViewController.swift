@@ -49,7 +49,7 @@ class ViewController: UIViewController,
     @IBOutlet weak var searchLocation: UISearchBar!
     var searchActive : Bool = false
     var checkWeather : Bool = false
-    let locationManager = CLLocationManager()
+    var locationManager = CLLocationManager()
     var weather: WeatherGetter!
     
     
@@ -59,6 +59,11 @@ class ViewController: UIViewController,
         super.viewDidLoad()
         weather = WeatherGetter(delegate: self)
         searchLocation.delegate = self
+        
+        locationManager = CLLocationManager()
+        locationManager.delegate = self
+        locationManager.requestAlwaysAuthorization()
+        
         
         // Initialize UI
         cityLabel.text = "Waterford Ireland"

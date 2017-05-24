@@ -45,6 +45,8 @@
 	<false/>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Hey there! In order to use your exact location, rainorshine needs to access this devices location abilities</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Hey there! In order to use your exact location, rainorshine needs to access this devices location abilities</string>
 	<key>NSAppTransportSecurity</key>
 	<dict>
 		<key>NSAllowsArbitraryLoads</key>
