@@ -48,9 +48,9 @@ class ViewController: UIViewController,
     @IBOutlet weak var windLabel: UILabel!
     @IBOutlet weak var rainLabel: UILabel!
     @IBOutlet weak var humidityLabel: UILabel!
+    @IBOutlet weak var pressureLabel: UILabel!
     @IBOutlet weak var displayWeeatherImage: UIImageView!
     @IBOutlet weak var searchLocation: UISearchBar!
-    
     
     var searchActive : Bool = false
     var checkWeather : Bool = false
@@ -86,12 +86,13 @@ class ViewController: UIViewController,
         
         // Initialize UI
         cityLabel.text = "Waterford Ireland"
-        weatherLabel.text = "Currently Raining"
-        temperatureLabel.text = "00"
+        weatherLabel.text = "Clear Skies"
+        temperatureLabel.text = "10°"
         cloudCoverLabel.text = "partly"
         windLabel.text = "20"
-        rainLabel.text = "0"
+        rainLabel.text = "None"
         humidityLabel.text = "44"
+        pressureLabel.text = "10"
         searchLocation.text = ""
         searchLocation.placeholder = "Search for City"
         searchLocation.enablesReturnKeyAutomatically = true
@@ -142,9 +143,10 @@ class ViewController: UIViewController,
         DispatchQueue.main.async {
             self.cityLabel.text = weather.city
             self.weatherLabel.text = weather.weatherDescription
+            self.pressureLabel.text = "\(weather.pressure)%"
             self.temperatureLabel.text = "\(Int(round(weather.tempCelsius)))°"
             self.cloudCoverLabel.text = "\(weather.cloudCover)%"
-            self.windLabel.text = "\(weather.windSpeed) m/s"
+            self.windLabel.text = "\(Int(round(weather.windSpeed))) m/s"
             
             if let rain = weather.rainfallInLast3Hours {
                 self.rainLabel.text = "\(rain) mm"
@@ -175,10 +177,10 @@ class ViewController: UIViewController,
             else if (currentWeatherDesc == "Clear") {
                 if now >= eight_today && now <= four_thirty_today
                 {
-                    self.displayWeeatherImage.image = self.weatherImage[1]
+                    self.displayWeeatherImage.image = self.weatherImage[9]
                 }
                 else {
-                    self.displayWeeatherImage.image = self.weatherImage[9]
+                    self.displayWeeatherImage.image = self.weatherImage[1]
                 }
             }
             else {
