@@ -45,13 +45,15 @@ class ViewController: UIViewController,
     @IBOutlet weak var rainLabel: UILabel!
     @IBOutlet weak var humidityLabel: UILabel!
     @IBOutlet weak var getLocationWeatherButton: UIButton!
-    
     @IBOutlet weak var displayWeeatherImage: UIImageView!
     @IBOutlet weak var searchLocation: UISearchBar!
+    
+    
     var searchActive : Bool = false
     var checkWeather : Bool = false
     var locationManager = CLLocationManager()
     var weather: WeatherGetter!
+    
     
     var weatherImage: [UIImage] = [
         UIImage(named: "chanceofrain.png")!,
