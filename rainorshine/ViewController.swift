@@ -55,6 +55,7 @@ class ViewController: UIViewController,
     var weather: WeatherGetter!
     
     
+    
     var weatherImage: [UIImage] = [
         UIImage(named: "chanceofrain.png")!,
         UIImage(named: "clearnight.png")!,
@@ -94,7 +95,7 @@ class ViewController: UIViewController,
         searchLocation.placeholder = "Search for City"
         searchLocation.enablesReturnKeyAutomatically = true
         
-         displayWeeatherImage.image = weatherImage[3]
+        displayWeeatherImage.image = weatherImage[3]
         
         getLocation()
         
@@ -164,6 +165,38 @@ class ViewController: UIViewController,
             
             self.humidityLabel.text = "\(weather.humidity)%"
             self.getLocationWeatherButton.isEnabled = true
+            
+            let currentWeatherDesc = weather.mainWeather
+            
+            if  (currentWeatherDesc == "Rain")  {
+                self.displayWeeatherImage.image = self.weatherImage[0]
+            }
+            else if (currentWeatherDesc == "Mist") {
+                self.displayWeeatherImage.image = self.weatherImage[8]
+            }
+            else if (currentWeatherDesc == "Haze") {
+                self.displayWeeatherImage.image = self.weatherImage[4]
+            }
+            else if (currentWeatherDesc == "Drizzle") {
+                self.displayWeeatherImage.image = self.weatherImage[3]
+            }
+            else if (currentWeatherDesc == "Clouds") {
+                self.displayWeeatherImage.image = self.weatherImage[2]
+            }
+            else if (currentWeatherDesc == "Clear") {
+                self.displayWeeatherImage.image = self.weatherImage[9]
+            }
+            else if now >= eight_today && now <= four_thirty_today
+            {
+                self.displayWeeatherImage.image = self.weatherImage[1]
+            }
+            else {
+                self.displayWeeatherImage.image = self.weatherImage[10]
+            }
+            
+            print(weather.weatherIconID)
+            print(weather.mainWeather)
+            
         }
     }
     
@@ -292,3 +325,34 @@ extension String {
     }
     
 }
+
+extension Date
+{
+    
+    func dateAt(hours: Int, minutes: Int) -> Date
+    {
+        let calendar = NSCalendar(calendarIdentifier: NSCalendar.Identifier.gregorian)!
+        
+        //get the month/day/year componentsfor today's date.
+        
+        
+        var date_components = calendar.components(
+            [NSCalendar.Unit.year,
+             NSCalendar.Unit.month,
+             NSCalendar.Unit.day],
+            from: self)
+        
+        //Create an NSDate for the specified time today.
+        date_components.hour = hours
+        date_components.minute = minutes
+        date_components.second = 0
+        
+        let newDate = calendar.date(from: date_components)!
+        return newDate
+    }
+}
+
+
+let now = Date()
+let eight_today = now.dateAt(hours: 8, minutes: 0)
+let four_thirty_today = now.dateAt(hours: 16, minutes: 30)
