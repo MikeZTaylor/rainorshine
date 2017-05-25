@@ -34,9 +34,13 @@ fileprivate func > <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
 
 class ViewController: UIViewController,
     WeatherGetterDelegate,
-    CLLocationManagerDelegate, 
+    CLLocationManagerDelegate,
     UITextFieldDelegate, UISearchBarDelegate
 {
+    
+    // MARK: - Variables
+    // -----------------------
+    
     @IBOutlet weak var cityLabel: UILabel!
     @IBOutlet weak var weatherLabel: UILabel!
     @IBOutlet weak var temperatureLabel: UILabel!
@@ -70,8 +74,6 @@ class ViewController: UIViewController,
     ]
     
     
-    // MARK: -
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         weather = WeatherGetter(delegate: self)
@@ -103,7 +105,7 @@ class ViewController: UIViewController,
     }
     
     
-    // MARK: - Button events and states
+    // MARK: - Search Bar
     // --------------------------------
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
@@ -171,11 +173,13 @@ class ViewController: UIViewController,
                 self.displayWeeatherImage.image = self.weatherImage[2]
             }
             else if (currentWeatherDesc == "Clear") {
-                self.displayWeeatherImage.image = self.weatherImage[9]
-            }
-            else if now >= eight_today && now <= four_thirty_today
-            {
-                self.displayWeeatherImage.image = self.weatherImage[1]
+                if now >= eight_today && now <= four_thirty_today
+                {
+                    self.displayWeeatherImage.image = self.weatherImage[1]
+                }
+                else {
+                    self.displayWeeatherImage.image = self.weatherImage[9]
+                }
             }
             else {
                 self.displayWeeatherImage.image = self.weatherImage[10]
@@ -192,7 +196,7 @@ class ViewController: UIViewController,
         DispatchQueue.main.async {
             self.showSimpleAlert(title: "Can't get the weather",
                                  message: "The weather service isn't responding.")
-
+            
         }
         print("didNotGetWeather error: \(error)")
     }
@@ -294,6 +298,9 @@ class ViewController: UIViewController,
     }
     
 }
+
+// MARK: - Extensions
+// -----------------------
 
 extension String {
     

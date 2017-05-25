@@ -7,7 +7,6 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -22,7 +21,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="xBL-be-l24" kind="relationship" relationship="rootViewController" id="Tgj-27-Btt"/>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="JVZ-8J-D0T"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gn1-X1-PhG" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -230,64 +229,10 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="981.15942028985512" y="135.32608695652175"/>
-        </scene>
-        <!--Rain Or Shine-->
-        <scene sceneID="RfO-uI-Wi0">
-            <objects>
-                <viewController id="SeK-8L-XyE" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="jfF-SU-bbU"/>
-                        <viewControllerLayoutGuide type="bottom" id="22d-8Z-K28"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="rai-HR-OXd">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heavystroms" translatesAutoresizingMaskIntoConstraints="NO" id="JZn-5i-Bbt">
-                                <rect key="frame" x="90" y="136" width="257" height="182"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="JZn-5i-Bbt" secondAttribute="height" multiplier="319:226" id="OC0-He-o9x"/>
-                                </constraints>
-                            </imageView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="JZn-5i-Bbt" firstAttribute="top" secondItem="jfF-SU-bbU" secondAttribute="bottom" constant="72" id="GSF-kM-wbB"/>
-                            <constraint firstItem="22d-8Z-K28" firstAttribute="top" secondItem="JZn-5i-Bbt" secondAttribute="bottom" constant="369" id="Qar-dN-UZj"/>
-                            <constraint firstItem="JZn-5i-Bbt" firstAttribute="leading" secondItem="rai-HR-OXd" secondAttribute="leadingMargin" constant="70" id="hHH-dr-745"/>
-                            <constraint firstItem="JZn-5i-Bbt" firstAttribute="width" secondItem="JZn-5i-Bbt" secondAttribute="height" multiplier="319:226" id="z1i-Dg-t9F"/>
-                        </constraints>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Detailed View" image="detailed" selectedImage="detailed" id="gaC-Su-RD2"/>
-                    <navigationItem key="navigationItem" title="Rain Or Shine" id="aKs-dd-719"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="eKq-4e-77A" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="982" y="945"/>
-        </scene>
-        <!--Rain Or Shine-->
-        <scene sceneID="EzH-4s-j0r">
-            <objects>
-                <tabBarController storyboardIdentifier="MainWeatherController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="xBL-be-l24" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" title="Rain Or Shine" id="8cU-Wq-QVn"/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" id="57e-mf-BA0">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    </tabBar>
-                    <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="eJg-1J-Dz0"/>
-                        <segue destination="SeK-8L-XyE" kind="relationship" relationship="viewControllers" id="p1M-H7-J9a"/>
-                    </connections>
-                </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="6Cd-1T-Lgm" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-307" y="443"/>
+            <point key="canvasLocation" x="-470" y="443"/>
         </scene>
     </scenes>
     <resources>
-        <image name="detailed" width="30" height="30"/>
         <image name="heavystroms" width="177" height="140"/>
         <image name="today" width="30" height="30"/>
     </resources>
