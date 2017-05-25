@@ -87,11 +87,11 @@ class ViewController: UIViewController,
         
         
         // Initialize UI
-        cityLabel.text = "Waterford Ireland"
+        cityLabel.text = "Waterford"
         weatherLabel.text = "Clear Skies"
         temperatureLabel.text = "10°"
-        temp_maxLabel.text = "10°"
-        temp_minLabel.text = "10°"
+        temp_maxLabel.text = "12°"
+        temp_minLabel.text = "08°"
         cloudCoverLabel.text = "partly"
         windLabel.text = "20"
         rainLabel.text = "None"
