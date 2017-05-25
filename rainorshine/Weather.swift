@@ -27,10 +27,22 @@ struct Weather {
     // computed properties.
     
     fileprivate let temp: Double
+    fileprivate let temp_min: Double
+    fileprivate let temp_max: Double
     
     var tempCelsius: Double {
         get {
             return temp - 273.15
+        }
+    }
+    var maxTempCelsius: Double {
+        get {
+            return temp_min - 273.15
+        }
+    }
+    var minTempCelsius: Double {
+        get {
+            return temp_max - 273.15
         }
     }
     var tempFahrenheit: Double {
@@ -38,6 +50,7 @@ struct Weather {
             return (temp - 273.15) * 1.8 + 32
         }
     }
+    
     let humidity: Int
     let pressure: Int
     let cloudCover: Int
@@ -69,6 +82,8 @@ struct Weather {
         
         let mainDict = weatherData["main"] as! [String: AnyObject]
         temp = mainDict["temp"] as! Double
+        temp_min = mainDict["temp_min"] as! Double
+        temp_max = mainDict["temp_max"] as! Double
         humidity = mainDict["humidity"] as! Int
         pressure = mainDict["pressure"] as! Int
         

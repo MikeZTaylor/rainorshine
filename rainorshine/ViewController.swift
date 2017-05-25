@@ -52,6 +52,8 @@ class ViewController: UIViewController,
     @IBOutlet weak var displayWeeatherImage: UIImageView!
     @IBOutlet weak var searchLocation: UISearchBar!
     
+    @IBOutlet weak var temp_maxLabel: UILabel!
+    @IBOutlet weak var temp_minLabel: UILabel!
     var searchActive : Bool = false
     var checkWeather : Bool = false
     var locationManager = CLLocationManager()
@@ -88,6 +90,8 @@ class ViewController: UIViewController,
         cityLabel.text = "Waterford Ireland"
         weatherLabel.text = "Clear Skies"
         temperatureLabel.text = "10°"
+        temp_maxLabel.text = "10°"
+        temp_minLabel.text = "10°"
         cloudCoverLabel.text = "partly"
         windLabel.text = "20"
         rainLabel.text = "None"
@@ -145,6 +149,8 @@ class ViewController: UIViewController,
             self.weatherLabel.text = weather.weatherDescription
             self.pressureLabel.text = "\(weather.pressure)%"
             self.temperatureLabel.text = "\(Int(round(weather.tempCelsius)))°"
+            self.temp_maxLabel.text = "\(Int(round(weather.minTempCelsius)))°"
+            self.temp_minLabel.text = "\(Int(round(weather.maxTempCelsius)))°"
             self.cloudCoverLabel.text = "\(weather.cloudCover)%"
             self.windLabel.text = "\(Int(round(weather.windSpeed))) m/s"
             
