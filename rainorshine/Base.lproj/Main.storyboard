@@ -126,20 +126,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="coS-nw-hvi">
-                                <rect key="frame" x="353" y="105" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="getWeatherForLocationButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4WQ-GX-20j"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Give Access to Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L3z-4o-rpT">
-                                <rect key="frame" x="105" y="110" width="183" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="what it currently feels like" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IUk-Od-nve">
                                 <rect key="frame" x="25" y="450" width="196" height="39"/>
                                 <constraints>
@@ -194,7 +180,6 @@
                             <constraint firstItem="3ev-1O-SnW" firstAttribute="centerX" secondItem="pFd-UX-geR" secondAttribute="centerX" id="EgY-3e-Lje"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="IUk-Od-nve" secondAttribute="bottom" constant="12" id="FjL-hr-37f"/>
                             <constraint firstAttribute="trailingMargin" secondItem="88g-og-fFt" secondAttribute="trailing" constant="26" id="Fjv-th-TVM"/>
-                            <constraint firstItem="AUF-R9-TaP" firstAttribute="trailing" secondItem="L3z-4o-rpT" secondAttribute="trailing" id="GID-Hl-0Yd"/>
                             <constraint firstItem="yEq-Ka-dzn" firstAttribute="top" secondItem="8a3-hW-CH6" secondAttribute="bottom" constant="16" id="HDI-KA-Ozx"/>
                             <constraint firstAttribute="trailingMargin" secondItem="yEq-Ka-dzn" secondAttribute="trailing" constant="27" id="HsR-hY-0ir"/>
                             <constraint firstItem="qyT-T7-tfd" firstAttribute="top" secondItem="yEq-Ka-dzn" secondAttribute="bottom" constant="49" id="JEK-EB-o2t"/>
@@ -226,7 +211,6 @@
                         <outlet property="cityLabel" destination="8a3-hW-CH6" id="4ll-5r-jx5"/>
                         <outlet property="cloudCoverLabel" destination="lpU-Hk-gmA" id="7B0-gY-fNj"/>
                         <outlet property="displayWeeatherImage" destination="yEq-Ka-dzn" id="rfa-Aj-oBQ"/>
-                        <outlet property="getLocationWeatherButton" destination="coS-nw-hvi" id="gEU-hj-rye"/>
                         <outlet property="humidityLabel" destination="88g-og-fFt" id="iqK-Lz-ANH"/>
                         <outlet property="rainLabel" destination="rvN-EB-7dJ" id="Uwz-LN-Wmn"/>
                         <outlet property="searchDisplayController" destination="Vdm-kM-geb" id="Za1-WY-xer"/>

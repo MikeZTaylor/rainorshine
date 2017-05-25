@@ -44,7 +44,6 @@ class ViewController: UIViewController,
     @IBOutlet weak var windLabel: UILabel!
     @IBOutlet weak var rainLabel: UILabel!
     @IBOutlet weak var humidityLabel: UILabel!
-    @IBOutlet weak var getLocationWeatherButton: UIButton!
     @IBOutlet weak var displayWeeatherImage: UIImageView!
     @IBOutlet weak var searchLocation: UISearchBar!
     
@@ -95,8 +94,6 @@ class ViewController: UIViewController,
         searchLocation.placeholder = "Search for City"
         searchLocation.enablesReturnKeyAutomatically = true
         
-        displayWeeatherImage.image = weatherImage[3]
-        
         getLocation()
         
     }
@@ -108,15 +105,6 @@ class ViewController: UIViewController,
     
     // MARK: - Button events and states
     // --------------------------------
-    
-    @IBAction func getWeatherForLocationButtonTapped(_ sender: UIButton) {
-        //setWeatherButtonStates(false)
-        getLocation()
-    }
-    
-    func setWeatherButtonStates(_ state: Bool) {
-        getLocationWeatherButton.isEnabled = state
-    }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         guard let text = searchLocation.text, !text.trimmed.isEmpty else {
@@ -164,7 +152,6 @@ class ViewController: UIViewController,
             }
             
             self.humidityLabel.text = "\(weather.humidity)%"
-            self.getLocationWeatherButton.isEnabled = true
             
             let currentWeatherDesc = weather.mainWeather
             
@@ -205,7 +192,6 @@ class ViewController: UIViewController,
         DispatchQueue.main.async {
             self.showSimpleAlert(title: "Can't get the weather",
                                  message: "The weather service isn't responding.")
-            self.getLocationWeatherButton.isEnabled = true
 
         }
         print("didNotGetWeather error: \(error)")
@@ -222,7 +208,6 @@ class ViewController: UIViewController,
                     "for your current location.\n" +
                 "Go to Settings → Privacy → Location Services and turn location services on."
             )
-            getLocationWeatherButton.isEnabled = true
             return
         }
         
@@ -245,7 +230,6 @@ class ViewController: UIViewController,
                 alert.addAction(cancelAction)
                 alert.addAction(openSettingsAction)
                 present(alert, animated: true, completion: nil)
-                getLocationWeatherButton.isEnabled = true
                 return
                 
             case .notDetermined:
