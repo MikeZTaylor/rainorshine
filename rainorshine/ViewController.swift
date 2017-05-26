@@ -275,10 +275,6 @@ class ViewController: UIViewController,
             return
         }
         
-        locationManager.delegate = self
-        locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        //locationManager.requestLocation()
-        locationManager.startUpdatingLocation()
     }
 
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
@@ -289,11 +285,6 @@ class ViewController: UIViewController,
         let coordinations = CLLocationCoordinate2D(latitude: userLocation.coordinate.latitude,longitude: userLocation.coordinate.longitude)
         
         weather.getWeatherByCoordinates (latitude: coordinations.latitude, longitude: coordinations.longitude)
-        
-        //let span = MKCoordinateSpanMake(0.2,0.2)
-        //let region = MKCoordinateRegion(center: coordinations, span: span)
-        
-        //mapView.setRegion(region, animated: true)
         
     }
 
