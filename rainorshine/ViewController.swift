@@ -52,10 +52,12 @@ class ViewController: UIViewController,
     @IBOutlet weak var displayWeeatherImage: UIImageView!
     @IBOutlet weak var searchLocation: UISearchBar!
     
+    @IBOutlet weak var getLocationWeatherButton: UIButton!
     @IBOutlet weak var temp_maxLabel: UILabel!
     @IBOutlet weak var temp_minLabel: UILabel!
     var searchActive : Bool = false
     var checkWeather : Bool = false
+    
     var locationManager = CLLocationManager()
     var weather: WeatherGetter!
     
@@ -81,9 +83,9 @@ class ViewController: UIViewController,
         weather = WeatherGetter(delegate: self)
         searchLocation.delegate = self
         
-        locationManager = CLLocationManager()
-        locationManager.delegate = self
-        locationManager.requestAlwaysAuthorization()
+        //locationManager = CLLocationManager()
+       // locationManager.delegate = self
+       // locationManager.requestAlwaysAuthorization()
         
         
         // Initialize UI
@@ -138,6 +140,20 @@ class ViewController: UIViewController,
         searchActive = false;
     }
     
+    func setWeatherButtonStates(_ state: Bool) {
+        getLocationWeatherButton.isEnabled = state
+        //getCityWeatherButton.isEnabled = state
+    }
+    
+    @IBAction func getWeatherForLocationButtonTapped(sender: UIButton) {
+        setWeatherButtonStates(false)
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.startUpdatingLocation()
+        
+        //mapView.showsUserLocation = true
+    }
     
     // MARK: - WeatherGetterDelegate methods
     // -----------------------------------
@@ -193,6 +209,8 @@ class ViewController: UIViewController,
                 self.displayWeeatherImage.image = self.weatherImage[10]
             }
             
+            self.getLocationWeatherButton.isEnabled = true
+            
             print(weather.weatherIconID)
             print(weather.mainWeather)
             
@@ -204,6 +222,7 @@ class ViewController: UIViewController,
         DispatchQueue.main.async {
             self.showSimpleAlert(title: "Can't get the weather",
                                  message: "The weather service isn't responding.")
+            self.getLocationWeatherButton.isEnabled = true
             
         }
         print("didNotGetWeather error: \(error)")
@@ -216,10 +235,11 @@ class ViewController: UIViewController,
         guard CLLocationManager.locationServicesEnabled() else {
             showSimpleAlert(
                 title: "Please turn on location services",
-                message: "rainorshine needs location services in order to report the weather " +
+                message: "This app needs location services in order to report the weather " +
                     "for your current location.\n" +
                 "Go to Settings → Privacy → Location Services and turn location services on."
             )
+            getLocationWeatherButton.isEnabled = true
             return
         }
         
@@ -229,7 +249,7 @@ class ViewController: UIViewController,
             case .denied, .restricted:
                 let alert = UIAlertController(
                     title: "Location services for this app are disabled",
-                    message: "In order to get your current location, please open Settings for this rainorshine, choose \"Location\"  and set \"Allow location access\" to \"While Using the App\".",
+                    message: "In order to get your current location, please open Settings for this app, choose \"Location\"  and set \"Allow location access\" to \"While Using the App\".",
                     preferredStyle: .alert
                 )
                 let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
@@ -242,10 +262,11 @@ class ViewController: UIViewController,
                 alert.addAction(cancelAction)
                 alert.addAction(openSettingsAction)
                 present(alert, animated: true, completion: nil)
+                getLocationWeatherButton.isEnabled = true
                 return
                 
             case .notDetermined:
-                locationManager.requestWhenInUseAuthorization()
+               locationManager.requestWhenInUseAuthorization()
                 
             default:
                 print("Oops! Shouldn't have come this far.")
@@ -255,27 +276,38 @@ class ViewController: UIViewController,
         }
         
         locationManager.delegate = self
-        locationManager.desiredAccuracy = kCLLocationAccuracyThreeKilometers
-        locationManager.requestLocation()
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        //locationManager.requestLocation()
+        locationManager.startUpdatingLocation()
     }
-    
+
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        let newLocation = locations.last!
-        weather.getWeatherByCoordinates(latitude: newLocation.coordinate.latitude,
-                                        longitude: newLocation.coordinate.longitude)
+        let userLocation:CLLocation = locations[0] as CLLocation
+        
+        manager.stopUpdatingLocation()
+        
+        let coordinations = CLLocationCoordinate2D(latitude: userLocation.coordinate.latitude,longitude: userLocation.coordinate.longitude)
+        
+        weather.getWeatherByCoordinates (latitude: coordinations.latitude, longitude: coordinations.longitude)
+        
+        //let span = MKCoordinateSpanMake(0.2,0.2)
+        //let region = MKCoordinateRegion(center: coordinations, span: span)
+        
+        //mapView.setRegion(region, animated: true)
+        
     }
-    
-    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        // This method is called asynchronously, which means it won't execute in the main queue.
-        // All UI code needs to execute in the main queue, which is why we're wrapping the call
-        // to showSimpleAlert(title:message:) in a dispatch_async() call.
-        DispatchQueue.main.async {
-            self.showSimpleAlert(title: "Woops! Can't determine your current location",
-                                 message: "The GPS and other location services aren't responding.")
-        }
-        print("locationManager didFailWithError: \(error)")
+
+func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+    // This method is called asynchronously, which means it won't execute in the main queue.
+    // All UI code needs to execute in the main queue, which is why we're wrapping the call
+    // to showSimpleAlert(title:message:) in a dispatch_async() call.
+    DispatchQueue.main.async() {
+        self.showSimpleAlert(title: "Can't determine your location",
+                             message: "The GPS and other location services aren't responding.")
     }
-    
+    print("locationManager didFailWithError: \(error)")
+}
+
     
     // Tapping on the view should dismiss the keyboard.
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
