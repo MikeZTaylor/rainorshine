@@ -122,6 +122,9 @@ class ViewController: UIViewController,
         weather.getWeatherByCity(searchLocation.text!.urlEncoded)
         searchActive = false;
         self.searchLocation.endEditing(true)
+        
+        let generator = UIImpactFeedbackGenerator(style: .light)
+        generator.impactOccurred()
     }
     
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
@@ -151,6 +154,9 @@ class ViewController: UIViewController,
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
+        
+        let generator = UIImpactFeedbackGenerator(style: .light)
+        generator.impactOccurred()
         
         //mapView.showsUserLocation = true
     }
@@ -306,8 +312,25 @@ func locationManager(_ manager: CLLocationManager, didFailWithError error: Error
     }
     
     
-    // MARK: - Utility methods
+    // MARK: - Haptic Feedback
     // -----------------------
+    private func vibrateWithHaptic() {
+        let generator = UIImpactFeedbackGenerator(style: .heavy)
+        generator.prepare()
+        
+        generator.impactOccurred()
+    }
+    
+    func platform() -> String {
+        var sysinfo = utsname()
+        uname(&sysinfo) // ignore return value
+        return String(bytes: Data(bytes: &sysinfo.machine, count: Int(_SYS_NAMELEN)), encoding: .ascii)!.trimmingCharacters(in: .controlCharacters)
+    }
+    
+    public var hasHapticFeedback: Bool {
+        return ["iPhone9,1", "iPhone9,3", "iPhone9,2", "iPhone9,4"].contains(platform())
+    }
+    
     
     func showSimpleAlert(title: String, message: String) {
         let alert = UIAlertController(
